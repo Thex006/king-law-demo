@@ -1,0 +1,269 @@
+@import "tailwindcss";
+
+/*
+ * The King Law Office tokens. Black grounds, bone type, one brass accent.
+ * Flat backgrounds only (landing-page-design B4).
+ */
+@theme {
+  --color-ink: #000000;
+  --color-coal: #0e0e0d;
+  --color-smoke: #181818;
+  --color-ash: #1f1f1f;
+  --color-slate: #272727;
+  --color-line: #313131;
+
+  --color-bone: #f4f1ea;
+  --color-bone-2: #b9b4aa;
+  --color-bone-3: #858077;
+
+  --color-brass: #d6ad62;
+  --color-brass-hi: #e9c47e;
+  --color-brass-lo: #9c7a3c;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  background: var(--color-ink);
+  color: var(--color-bone);
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body {
+  background: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+::selection {
+  background: var(--color-brass);
+  color: var(--color-ink);
+}
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Named text styles (landing-page-design B1). One typeface: Geist, with Geist Mono for small labels. */
+@utility display-1 {
+  font-weight: 600;
+  font-size: 2.75rem;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  @media (width >= 26rem) {
+    font-size: var(--text-5xl);
+  }
+  @media (width >= 48rem) {
+    font-size: var(--text-7xl);
+    line-height: 0.95;
+  }
+  @media (width >= 80rem) {
+    font-size: var(--text-8xl);
+  }
+}
+@utility heading-1 {
+  font-weight: 600;
+  font-size: var(--text-4xl);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  @media (width >= 48rem) {
+    font-size: var(--text-6xl);
+    line-height: 1;
+  }
+}
+@utility heading-2 {
+  font-weight: 600;
+  font-size: var(--text-3xl);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  @media (width >= 48rem) {
+    font-size: var(--text-5xl);
+    line-height: 1.02;
+  }
+}
+@utility heading-3 {
+  font-weight: 600;
+  font-size: var(--text-2xl);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  @media (width >= 48rem) {
+    font-size: var(--text-4xl);
+    line-height: 1.1;
+  }
+}
+@utility heading-4 {
+  font-weight: 600;
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  @media (width >= 48rem) {
+    font-size: var(--text-2xl);
+  }
+}
+@utility title-1 {
+  font-size: var(--text-xl);
+  line-height: var(--text-xl--line-height);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+@utility title-3 {
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
+  font-weight: 500;
+}
+@utility title-4 {
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+  font-weight: 500;
+}
+@utility body-lead {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  font-weight: 400;
+}
+@utility body-3 {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  font-weight: 400;
+}
+@utility body-6 {
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  font-weight: 400;
+}
+@utility button-md {
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
+  font-weight: 600;
+}
+@utility button-sm {
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+  font-weight: 600;
+}
+@utility caption-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+@utility caption-2 {
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+  font-weight: 400;
+}
+
+/* Hero heading: white to grey text gradient (landing-page-design B5). */
+.text-hero {
+  background: linear-gradient(180deg, #ffffff 30%, #9b9b9b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Film grain over photos, drawn once as an SVG turbulence tile. */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Slow compositor drift for still photos. */
+@keyframes drift {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(-1.5%, -1%, 0);
+  }
+}
+.drift {
+  animation: drift 26s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Case ring: cards on a shallow arc (coverflow). The ring is pulled back by its radius so the front card sits at true size. */
+:root {
+  --ring-w: 190px;
+  --ring-r: calc(var(--ring-w) * 1.75);
+}
+@media (width >= 48rem) {
+  :root {
+    --ring-w: 290px;
+  }
+}
+@media (width >= 80rem) {
+  :root {
+    --ring-w: 340px;
+  }
+}
+.ring-card {
+  width: var(--ring-w);
+  height: calc(var(--ring-w) * 1.25);
+  left: calc(var(--ring-w) / -2);
+  top: calc(var(--ring-w) * -0.625);
+}
+.ring-pull {
+  transform: translateZ(calc(var(--ring-r) * -1));
+}
+
+/* The curtain also lifts on its own in CSS, so a slow phone never stays behind it. */
+@keyframes loader-out {
+  to {
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+  }
+}
+.loader-auto {
+  animation: loader-out 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.9s forwards;
+}

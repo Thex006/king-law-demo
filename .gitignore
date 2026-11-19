@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+graphify-out/
+.taste-skill/
+e2e/shots/
+*.tsbuildinfo
+next-env.d.ts
+.env*
+npm-debug.log*
+.DS_Store
+data/
+_photos/
