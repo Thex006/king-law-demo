@@ -48,7 +48,7 @@ export function SiteNav() {
       >
         <nav
           aria-label="Main"
-          className="flex w-full max-w-fit items-center gap-2 rounded-full border border-bone/10 bg-ink/60 p-2 pl-3 shadow-[0_8px_32px_rgb(0_0_0/0.4)] backdrop-blur-xl max-md:max-w-none max-md:justify-between"
+          className="flex w-full max-w-fit items-center gap-2 rounded-full border border-bone/10 bg-ink/60 p-2 in-data-[theme=light]:bg-smoke/90 in-data-[theme=light]:shadow-[0_8px_32px_rgb(0_0_0/0.25)] pl-3 shadow-[0_8px_32px_rgb(0_0_0/0.4)] backdrop-blur-xl max-md:max-w-none max-md:justify-between"
         >
           <a href="#top" className="flex items-center gap-3 rounded-full pr-3" aria-label={`${site.name}, back to top`}>
             <Monogram className="size-8" />

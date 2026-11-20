@@ -132,6 +132,12 @@ html.lenis body {
     font-size: var(--text-8xl);
   }
 }
+/* The hero headline also scales with screen height, so short laptop screens never clip it under the nav. */
+@utility hero-title {
+  @media (width >= 48rem) {
+    font-size: clamp(3.5rem, min(9vw, 11svh), 8rem);
+  }
+}
 @utility heading-1 {
   font-weight: 600;
   font-size: var(--text-4xl);

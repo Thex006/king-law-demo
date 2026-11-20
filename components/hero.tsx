@@ -26,7 +26,7 @@ export function Hero() {
   const fade = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={ref} id="top" className="theme-dark relative h-[100svh] min-h-[640px] overflow-hidden bg-ink text-bone" aria-labelledby="hero-title">
+    <section ref={ref} id="top" className="theme-dark relative flex min-h-[100svh] flex-col overflow-hidden bg-ink text-bone" aria-labelledby="hero-title">
       {/* Still photo first (instant, and the no WebGL fallback). The depth canvas fades in over it. */}
       <div className="absolute inset-0">
         <Image
@@ -54,7 +54,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgb(0_0_0/0.2)_0%,rgb(0_0_0/0.62)_30%,rgb(0_0_0/0.8)_100%)] md:hidden" />
       <div className="grain pointer-events-none absolute inset-0" />
 
-      <motion.div style={{ y, opacity: fade }} className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-end px-4 pb-24 md:px-10 md:pb-16">
+      <motion.div style={{ y, opacity: fade }} className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-end px-4 pt-32 pb-24 md:px-10 md:pt-36 md:pb-16">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export function Hero() {
           onMount
           delay={D + 0.1}
           text="Charged in Savannah? Put a former public defender in your corner"
-          className="display-1 text-hero max-w-[15ch] pb-2"
+          className="display-1 hero-title text-hero max-w-[15ch] pb-2"
         />
 
         <motion.p
