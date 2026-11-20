@@ -14,7 +14,7 @@ Before reading code broadly, read `graphify-out/GRAPH_REPORT.md` (build it with 
 
 ## Rules
 - Skills in `.claude/skills/` apply: landing-page-design and figma-designer (elayadesign/ai-design-skills, mandatory), design-taste-frontend, impeccable, typeui-minimal, writing-guidelines, playwright-cli and the addyosmani agent skills.
-- Design: black grounds, bone type, one brass accent (#d6ad62). Geist only (Geist Mono for small labels). Flat backgrounds; scrims only over photos.
+- Design: black grounds, bone type, one brass accent (#d6ad62). Light mode (Thierry asked 2026-11-20): toggle in the nav (`components/theme-toggle.tsx`, saved as `king-theme`, dark default, applied before paint in layout). Light tokens live under `:root[data-theme="light"]` in globals.css; `.theme-dark` pins the hero and every caption over a photo to the night palette. Text on brass uses `text-onbrass`, never `text-ink`. Geist only (Geist Mono for small labels). Flat backgrounds; scrims only over photos.
 - Legal: attorney advertising notice, "not legal advice", "no attorney client relationship" and "past results" lines must stay. Never promise outcomes. Reviews are real Google reviews quoted word for word; cuts are marked with an ellipsis.
 - Never show photos with readable details from another state (a "Laws of Massachusetts" book shot was rejected for this).
 - Motion: ease `cubic-bezier(0.22,1,0.36,1)`, transform and opacity, reveal once. Motion is NOT gated on prefers-reduced-motion (Thierry's Windows has animation effects off and he wants the motion).

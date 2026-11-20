@@ -61,7 +61,7 @@ export function CaseRing() {
                 {stages.map((st, i) => (
                   <div
                     key={st.n}
-                    className="ring-card absolute overflow-hidden rounded-3xl border border-bone/15 bg-ash [backface-visibility:hidden]"
+                    className="theme-dark ring-card absolute text-bone overflow-hidden rounded-3xl border border-bone/15 bg-ash [backface-visibility:hidden]"
                     style={{ transform: `rotateY(${i * STEP}deg) translateZ(var(--ring-r))` }}
                   >
                     <Image src={st.image} alt="" fill quality={90} sizes="(min-width: 1024px) 760px, 560px" className="object-cover" />

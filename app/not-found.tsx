@@ -10,7 +10,7 @@ export default function NotFound() {
       <h1 className="heading-1 text-hero max-w-[14ch] pb-1">This page was dismissed</h1>
       <p className="body-lead max-w-[28rem] text-bone-2">The page you wanted is not here. Your consultation still is.</p>
       <div className="flex flex-wrap justify-center gap-3">
-        <Link href="/" className="button-md inline-flex h-12 items-center rounded-full bg-brass px-6 text-ink">
+        <Link href="/" className="button-md inline-flex h-12 items-center rounded-full bg-brass px-6 text-onbrass">
           Back to the home page
         </Link>
         <a href={site.phone.href} className="button-md inline-flex h-12 items-center rounded-full border border-bone/20 px-6">

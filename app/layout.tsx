@@ -23,8 +23,11 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#000000",
-  colorScheme: "dark",
+  colorScheme: "dark light",
 };
+
+// Apply the saved theme before first paint, so light mode never flashes dark. Dark is the default.
+const THEME_SCRIPT = `try{var t=localStorage.getItem("king-theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t;if(t==="light"){var m=document.querySelector('meta[name="theme-color"]');m&&m.setAttribute("content","#f4f1ea")}}}catch(e){}`;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -45,11 +48,14 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" data-theme="dark" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body>
         <a
           href="#main"
-          className="button-sm fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-brass px-4 py-2 text-ink transition-transform duration-300 ease-out-expo focus:translate-y-0"
+          className="button-sm fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-brass px-4 py-2 text-onbrass transition-transform duration-300 ease-out-expo focus:translate-y-0"
         >
           Skip to content
         </a>

@@ -77,6 +77,19 @@ for (const [label, opts] of [
     });
   }
 
+  await test(`${label}: theme toggle switches to light and remembers it`, async () => {
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.getByRole("button", { name: "Switch to light mode" }).click();
+    assert.equal(await page.evaluate(() => document.documentElement.dataset.theme), "light");
+    await page.reload({ waitUntil: "networkidle" });
+    assert.equal(await page.evaluate(() => document.documentElement.dataset.theme), "light");
+    const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+    assert.equal(bg, "rgb(244, 241, 234)");
+    await page.waitForTimeout(2200);
+    await page.getByRole("button", { name: "Switch to dark mode" }).click();
+    assert.equal(await page.evaluate(() => localStorage.getItem("king-theme")), "dark");
+  });
+
   await test(`${label}: no console errors`, async () => assert.deepEqual(errors, []));
   await ctx.close();
 }

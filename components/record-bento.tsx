@@ -61,7 +61,7 @@ export function RecordBento() {
             initial="hidden"
             whileInView="show"
             viewport={VIEWPORT}
-            className="group relative min-h-[420px] overflow-hidden rounded-3xl md:col-span-6 lg:col-span-7 lg:row-span-2 lg:min-h-[560px]"
+            className="theme-dark group relative min-h-[420px] overflow-hidden rounded-3xl text-bone md:col-span-6 lg:col-span-7 lg:row-span-2 lg:min-h-[560px]"
           >
             <Image
               src="/images/courthouse-bull-street.jpg"
@@ -125,14 +125,14 @@ export function RecordBento() {
             </ol>
           </Tile>
 
-          <Tile className="flex flex-col justify-between gap-10 !border-brass/40 !bg-brass text-ink md:col-span-3 lg:col-span-4" i={1}>
-            <p className="caption-mono text-ink/70">First consultation</p>
+          <Tile className="flex flex-col justify-between gap-10 !border-brass/40 !bg-brass text-onbrass md:col-span-3 lg:col-span-4" i={1}>
+            <p className="caption-mono text-onbrass/70">First consultation</p>
             <div>
               <p className="text-8xl font-semibold leading-none tracking-[-0.06em]">
                 <CountUp from={0} to={60} />
                 <span className="text-4xl tracking-[-0.03em]"> min</span>
               </p>
-              <p className="body-3 mt-4 max-w-[22rem] text-ink/80">
+              <p className="body-3 mt-4 max-w-[22rem] text-onbrass/80">
                 Free. Sit down with Taylor King, lay out what happened, and leave knowing where you stand.
               </p>
             </div>
@@ -154,7 +154,7 @@ export function RecordBento() {
             initial="hidden"
             whileInView="show"
             viewport={VIEWPORT}
-            className="relative min-h-[300px] overflow-hidden rounded-3xl md:col-span-3 lg:col-span-4"
+            className="theme-dark relative min-h-[300px] overflow-hidden rounded-3xl text-bone md:col-span-3 lg:col-span-4"
           >
             <Image
               src="/images/library.jpg"

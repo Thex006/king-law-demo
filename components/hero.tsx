@@ -26,7 +26,7 @@ export function Hero() {
   const fade = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={ref} id="top" className="relative h-[100svh] min-h-[640px] overflow-hidden bg-ink" aria-labelledby="hero-title">
+    <section ref={ref} id="top" className="theme-dark relative h-[100svh] min-h-[640px] overflow-hidden bg-ink text-bone" aria-labelledby="hero-title">
       {/* Still photo first (instant, and the no WebGL fallback). The depth canvas fades in over it. */}
       <div className="absolute inset-0">
         <Image

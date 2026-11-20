@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { ConsultButton, CallButton } from "./ui/buttons";
 import { Magnetic } from "./motion/magnetic";
 import { Monogram } from "./ui/monogram";
+import { ThemeToggle } from "./theme-toggle";
 import { EASE } from "@/lib/motion";
 import { navLinks, site } from "@/lib/site";
 
@@ -79,6 +80,8 @@ export function SiteNav() {
               );
             })}
           </ul>
+
+          <ThemeToggle className="max-lg:ml-auto" />
 
           <Magnetic className="hidden md:inline-flex" strength={0.2}>
             <ConsultButton size="sm" label="Free consultation" />

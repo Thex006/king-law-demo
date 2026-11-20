@@ -34,7 +34,7 @@ export function MobileBar() {
       <a
         href="#consult"
         tabIndex={show ? 0 : -1}
-        className="button-sm flex h-12 flex-[1.4] items-center justify-center rounded-full bg-brass text-ink"
+        className="button-sm flex h-12 flex-[1.4] items-center justify-center rounded-full bg-brass text-onbrass"
       >
         Free consultation
       </a>

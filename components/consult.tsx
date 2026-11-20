@@ -40,7 +40,7 @@ function Field({
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="caption-2 text-[#f2a38a]"
+            className="caption-2 text-danger"
           >
             {error}
           </motion.p>
@@ -186,7 +186,7 @@ export function Consult() {
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field id="c-name" label="Your name" error={errors.name}>
-                    <input id="c-name" name="name" autoComplete="name" className={`${field} ${errors.name ? "border-[#f2a38a]" : "border-bone/15"}`} {...err("name")} />
+                    <input id="c-name" name="name" autoComplete="name" className={`${field} ${errors.name ? "border-danger" : "border-bone/15"}`} {...err("name")} />
                   </Field>
                   <Field id="c-phone" label="Phone" error={errors.phone}>
                     <input
@@ -196,13 +196,13 @@ export function Consult() {
                       inputMode="tel"
                       autoComplete="tel"
                       placeholder="(912) 555 0100"
-                      className={`${field} ${errors.phone ? "border-[#f2a38a]" : "border-bone/15"}`}
+                      className={`${field} ${errors.phone ? "border-danger" : "border-bone/15"}`}
                       {...err("phone")}
                     />
                   </Field>
                 </div>
                 <Field id="c-email" label="Email" hint="(optional)" error={errors.email}>
-                  <input id="c-email" name="email" type="email" autoComplete="email" className={`${field} ${errors.email ? "border-[#f2a38a]" : "border-bone/15"}`} {...err("email")} />
+                  <input id="c-email" name="email" type="email" autoComplete="email" className={`${field} ${errors.email ? "border-danger" : "border-bone/15"}`} {...err("email")} />
                 </Field>
                 <div className="grid gap-5 sm:grid-cols-[1.4fr_1fr]">
                   <Field id="c-charge" label="Charge or situation" error={errors.charge}>
@@ -210,7 +210,7 @@ export function Consult() {
                       id="c-charge"
                       name="charge"
                       placeholder="For example, DUI"
-                      className={`${field} ${errors.charge ? "border-[#f2a38a]" : "border-bone/15"}`}
+                      className={`${field} ${errors.charge ? "border-danger" : "border-bone/15"}`}
                       {...err("charge")}
                     />
                   </Field>
@@ -219,7 +219,7 @@ export function Consult() {
                       id="c-courtDate"
                       name="courtDate"
                       type="date"
-                      className={`${field} [color-scheme:dark] ${errors.courtDate ? "border-[#f2a38a]" : "border-bone/15"}`}
+                      className={`${field} ${errors.courtDate ? "border-danger" : "border-bone/15"}`}
                       {...err("courtDate")}
                     />
                   </Field>
@@ -230,27 +230,27 @@ export function Consult() {
                 <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
                 <div className="flex flex-col gap-2">
                   <label htmlFor="c-ack" className="flex cursor-pointer items-start gap-3">
-                    <input id="c-ack" name="ack" type="checkbox" className="mt-1 size-4 shrink-0 accent-[#d6ad62]" {...err("ack")} />
+                    <input id="c-ack" name="ack" type="checkbox" className="mt-1 size-4 shrink-0 accent-brass" {...err("ack")} />
                     <span className="caption-2 text-bone-2">
                       I understand that sending this form does not make Taylor King my lawyer, and that I should not send
                       confidential details of my case here.
                     </span>
                   </label>
                   {errors.ack && (
-                    <p id="c-ack-error" className="caption-2 text-[#f2a38a]">
+                    <p id="c-ack-error" className="caption-2 text-danger">
                       {errors.ack}
                     </p>
                   )}
                 </div>
                 {status === "error" && (
-                  <p className="caption-2 text-[#f2a38a]" role="alert">
+                  <p className="caption-2 text-danger" role="alert">
                     That did not go through. Check the fields above, or call {site.phone.display}.
                   </p>
                 )}
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="button-md flex h-14 items-center justify-center gap-3 rounded-full bg-brass text-ink transition-[background-color,transform] duration-300 ease-out-expo hover:bg-brass-hi active:scale-[0.98] disabled:opacity-70"
+                  className="button-md flex h-14 items-center justify-center gap-3 rounded-full bg-brass text-onbrass transition-[background-color,transform] duration-300 ease-out-expo hover:bg-brass-hi active:scale-[0.98] disabled:opacity-70"
                 >
                   {status === "sending" ? (
                     <>

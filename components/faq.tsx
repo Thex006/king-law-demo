@@ -42,7 +42,7 @@ export function Faq() {
                     </span>
                     <span
                       className={`grid size-10 shrink-0 place-items-center rounded-full border transition-[transform,background-color,border-color] duration-500 ease-out-expo ${
-                        isOpen ? "rotate-45 border-brass bg-brass text-ink" : "border-bone/20 text-bone"
+                        isOpen ? "rotate-45 border-brass bg-brass text-onbrass" : "border-bone/20 text-bone"
                       }`}
                     >
                       <Plus weight="bold" className="size-4" aria-hidden />

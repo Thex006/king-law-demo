@@ -22,11 +22,11 @@ export function ConsultButton({
   return (
     <a
       href="#consult"
-      className={`group inline-flex items-center justify-between rounded-full bg-brass text-ink transition-[background-color,transform] duration-300 ease-out-expo hover:bg-brass-hi active:scale-[0.98] ${pad[size]} ${className}`}
+      className={`group inline-flex items-center justify-between rounded-full bg-brass text-onbrass transition-[background-color,transform] duration-300 ease-out-expo hover:bg-brass-hi active:scale-[0.98] ${pad[size]} ${className}`}
     >
       <span className="whitespace-nowrap">{label}</span>
       <span
-        className={`grid place-items-center rounded-full bg-ink text-brass transition-transform duration-500 ease-out-expo group-hover:rotate-45 ${dot[size]}`}
+        className={`grid place-items-center rounded-full bg-onbrass text-brass-on transition-transform duration-500 ease-out-expo group-hover:rotate-45 ${dot[size]}`}
       >
         <ArrowUpRight weight="bold" className="size-4" aria-hidden />
       </span>

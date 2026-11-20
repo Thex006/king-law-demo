@@ -11,6 +11,7 @@ const browser = await chromium.launch({
 
 async function run(name, opts, stops) {
   const ctx = await browser.newContext(opts);
+  if (process.env.THEME) await ctx.addInitScript((t) => localStorage.setItem("king-theme", t), process.env.THEME);
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
@@ -27,7 +28,7 @@ async function run(name, opts, stops) {
       [sel, extra],
     );
     await page.waitForTimeout(wait);
-    await page.screenshot({ path: `${out}/${name}-${label}.png` });
+    await page.screenshot({ path: `${out}/${process.env.THEME ?? "dark"}-${name}-${label}.png` });
   }
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   console.log(name, "overflow:", overflow, "errors:", errors.length ? errors : "none");

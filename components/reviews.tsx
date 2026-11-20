@@ -67,13 +67,13 @@ export function Reviews() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="flex flex-col justify-between gap-10 rounded-3xl bg-brass p-6 text-ink md:col-span-2 md:p-10 lg:row-span-2"
+          className="flex flex-col justify-between gap-10 rounded-3xl bg-brass p-6 text-onbrass md:col-span-2 md:p-10 lg:row-span-2"
         >
           <Quotes weight="fill" className="size-10" aria-hidden />
           <blockquote className="heading-2 max-w-[18ch]">&ldquo;{lead.quote}&rdquo;</blockquote>
           <figcaption className="flex items-center justify-between gap-4">
             <span className="title-3">{lead.name}</span>
-            <span className="caption-mono text-ink/70">Google, {lead.when}</span>
+            <span className="caption-mono text-onbrass/70">Google, {lead.when}</span>
           </figcaption>
         </motion.figure>
 
@@ -107,7 +107,7 @@ export function Reviews() {
           <p className="heading-4 max-w-[16ch]">Talk to her before you decide anything. The first hour is free.</p>
           <a
             href="#consult"
-            className="button-sm inline-flex h-11 w-fit items-center rounded-full bg-brass px-5 text-ink transition-colors hover:bg-brass-hi"
+            className="button-sm inline-flex h-11 w-fit items-center rounded-full bg-brass px-5 text-onbrass transition-colors hover:bg-brass-hi"
           >
             Book your free consultation
           </a>

@@ -19,6 +19,10 @@
   --color-brass: #d6ad62;
   --color-brass-hi: #e9c47e;
   --color-brass-lo: #9c7a3c;
+  /* Text and marks that sit on a brass ground. */
+  --color-onbrass: #000000;
+  --color-brass-on: #d6ad62;
+  --color-danger: #f2a38a;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -26,8 +30,60 @@
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+:root {
+  --hero-from: #ffffff;
+  --hero-to: #9b9b9b;
+}
+
+/*
+ * Light mode: warm paper grounds, near black type, a deeper brass so accents keep their contrast.
+ * Tokens flip, so every component follows. `.theme-dark` pins a block (the hero, captions on photos) to the night palette.
+ */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-ink: #f4f1ea;
+  --color-coal: #ebe6dc;
+  --color-smoke: #fbf9f5;
+  --color-ash: #e2dccf;
+  --color-slate: #d9d2c4;
+  --color-line: #d3cbbd;
+  --color-bone: #0e0e0d;
+  --color-bone-2: #45423c;
+  --color-bone-3: #6b665d;
+  --color-brass: #8f6b2c;
+  --color-brass-hi: #a57d38;
+  --color-brass-lo: #6f5222;
+  --color-onbrass: #ffffff;
+  --color-brass-on: #8f6b2c;
+  --color-danger: #b4402a;
+  --hero-from: #0e0e0d;
+  --hero-to: #5f5a51;
+}
+.theme-dark,
+:root[data-theme="light"] .theme-dark {
+  color-scheme: dark;
+  --color-ink: #000000;
+  --color-coal: #0e0e0d;
+  --color-smoke: #181818;
+  --color-ash: #1f1f1f;
+  --color-slate: #272727;
+  --color-line: #313131;
+  --color-bone: #f4f1ea;
+  --color-bone-2: #b9b4aa;
+  --color-bone-3: #858077;
+  --color-brass: #d6ad62;
+  --color-brass-hi: #e9c47e;
+  --color-brass-lo: #9c7a3c;
+  --color-onbrass: #000000;
+  --color-brass-on: #d6ad62;
+  --color-danger: #f2a38a;
+  --hero-from: #ffffff;
+  --hero-to: #9b9b9b;
+}
+
 html {
   background: var(--color-ink);
+  transition: background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   color: var(--color-bone);
   color-scheme: dark;
   -webkit-font-smoothing: antialiased;
@@ -35,12 +91,16 @@ html {
 }
 body {
   background: var(--color-ink);
+  color: var(--color-bone);
+  transition:
+    background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   font-family: var(--font-sans);
   overflow-x: clip;
 }
 ::selection {
   background: var(--color-brass);
-  color: var(--color-ink);
+  color: var(--color-onbrass);
 }
 :focus-visible {
   outline: 2px solid var(--color-brass);
@@ -168,7 +228,7 @@ html.lenis body {
 
 /* Hero heading: white to grey text gradient (landing-page-design B5). */
 .text-hero {
-  background: linear-gradient(180deg, #ffffff 30%, #9b9b9b 100%);
+  background: linear-gradient(180deg, var(--hero-from) 30%, var(--hero-to) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

@@ -45,7 +45,7 @@ export function TaglineReveal() {
         </div>
         <motion.div
           style={{ y: gavelY, rotate: gavelR }}
-          className="relative mx-auto aspect-[4/5] w-full max-w-[380px] overflow-hidden rounded-3xl max-lg:hidden"
+          className="theme-dark relative mx-auto aspect-[4/5] w-full max-w-[380px] overflow-hidden rounded-3xl max-lg:hidden"
         >
           <Image
             src="/images/justice.jpg"

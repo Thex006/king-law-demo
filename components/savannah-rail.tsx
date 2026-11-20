@@ -57,7 +57,7 @@ export function SavannahRail() {
           {shots.map((s) => (
             <figure
               key={s.src}
-              className={`relative shrink-0 overflow-hidden rounded-3xl ${
+              className={`theme-dark relative shrink-0 overflow-hidden rounded-3xl text-bone ${
                 s.shape === "wide" ? "h-[52svh] w-[86vw] md:h-[64svh] md:w-[58vw]" : "h-[60svh] w-[64vw] md:h-[72svh] md:w-[30vw]"
               }`}
             >
